@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-var controller = require('../controller/controller');
+var controller = require('../controller/Controller');
 
 //cadastro de carro
 router.post('/carros', controller.carro.cadastrar);
