@@ -1,13 +1,19 @@
 FROM node:10.15.3
 
-WORKDIR /code
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-RUN npm install -g nodemon@1.11.0
+WORKDIR /home/node/app
 
-COPY package.json /code/package.json
-RUN npm install && npm ls
-RUN mv /code/node_modules /node_modules
+COPY package*.json ./
 
-COPY . /code
+RUN npm install
 
-CMD ["npm", "start"]
+COPY . .
+
+COPY --chown=node:node . .
+
+USER node
+
+EXPOSE 5000
+
+CMD [ "node", "app.js" ]
