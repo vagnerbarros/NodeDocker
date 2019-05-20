@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     networks:
-      rede
+      - rede
 
   backend:
     image: backend
@@ -15,7 +15,7 @@ services:
     ports:
       - "5000:5000"
     networks:
-      rede
+      - rede
 networks:
   rede:
     driver: bridge
