@@ -38,4 +38,3 @@ services:
       - rede
 networks:
   rede:
-    driver: bridge
