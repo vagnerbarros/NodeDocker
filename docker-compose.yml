@@ -9,7 +9,7 @@ services:
         limits:
           cpus: "0.1"
           memory: 50M
-      restart_polity: on-failure
+      restart_policy: on-failure
     build: ./frontend
     container_name: frontend
     ports:
@@ -27,7 +27,7 @@ services:
         limits:
           cpus: "0.1"
           memory: 50M
-      restart_polity: on-failure
+      restart_policy: on-failure
     build: ./backend
     container_name: backend
     ports:
