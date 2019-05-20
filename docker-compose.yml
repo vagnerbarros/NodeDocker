@@ -4,6 +4,7 @@ services:
   frontend:
     image: frontend:1.0
     build: ./frontend
+    container_name: frontend:1.0
     ports:
       - "80:80"
     depends_on:
@@ -14,6 +15,7 @@ services:
   backend:
     image: backend:1.0
     build: ./backend
+    container_name: backend:1.0
     ports:
       - "5000:5000"
     networks:
