@@ -1,11 +1,10 @@
 version: "3"
 
 services:
-  web:
-    build: .
-    command: nodemon -L --inspect=0.0.0.0:5858
-    volumes:
-      - .:/code
+  frontend:
+    build: ./frontend
     ports:
-      - "8000:8000"
-      - "5858:5858"
+      - "8080:80"
+  backend:
+    build: ./backend
+    ports: 5000:5000
