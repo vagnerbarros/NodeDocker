@@ -2,10 +2,20 @@ version: "3"
 
 services:
   frontend:
+    image: frontend
     build: ./frontend
     ports:
-      - "8080:80"
+      - "80:80"
+    networks:
+      rede
+
   backend:
+    image: backend
     build: ./backend
     ports:
       - "5000:5000"
+    networks:
+      rede
+networks:
+  rede:
+    driver: bridge
