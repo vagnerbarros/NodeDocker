@@ -10,7 +10,6 @@ pipeline {
             steps {
                 sh 'cd backend'
                 sh 'npm install'
-                sh 'npm test'
             }
         }
     }
