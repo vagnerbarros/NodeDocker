@@ -1,7 +1,13 @@
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent { label 'dockerserver' }
     stages {
-        stage('Build') { 
+        stage('Backend') {
+            agent {
+                docker {
+                    label 'dockerserver'
+                    image 'node:7-alpine'
+                }
+            } 
             steps {
                 sh 'cd backend'
                 sh 'npm install'
