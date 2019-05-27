@@ -4,6 +4,7 @@ pipeline {
         stage('Backend') {
             steps {
                 sh 'npm --version'
+                sh 'node --version'
             }
         }
     }
