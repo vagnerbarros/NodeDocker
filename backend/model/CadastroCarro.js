@@ -18,7 +18,6 @@ class CadastroCarro {
     listar() {
         
         try{
-
             return repositorio.listar();
         }
         catch(erro){
